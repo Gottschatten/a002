@@ -1,15 +1,20 @@
-use print::Kunden;
+/*use std::io::{self, Write};
+
+fn main() -> io::Result<()> {
+    let mut stdout = io::stdout().lock();
+
+    stdout.write_all(b"clear")?;
+
+    Ok(())
+}*/
+
 use std::io;
 use std::process::Command;
 
-mod print;
 fn main() {
+    println!("Test");
     Command::new("clear").status().unwrap();
-
-    let kunden = Kunden::build("user");
-    let kunden2 = Kunden::build("user1");
-    let table = Kunden::table(kunden.m_vec(kunden2));
-    println!("{}", table);
+    println!("Test2");
 
     let mut guess = String::new();
 
